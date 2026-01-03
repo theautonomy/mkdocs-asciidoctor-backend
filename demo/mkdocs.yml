@@ -41,12 +41,12 @@ markdown_extensions:
 exclude_docs: |
   partials/**
   snippets/**
-  modules/**
 
 plugins:
   - search
   - asciidoctor_backend:
-      asciidoctor_cmd: "c:/tools/ruby34/bin/asciidoctor.bat"
+      # Windows users: uncomment and set your path (see README)
+      # asciidoctor_cmd: "C:/tools/ruby34/bin/asciidoctor.bat"
       edit_includes: true
       fail_on_error: false
       ignore_missing: true
@@ -61,3 +61,12 @@ plugins:
         idseparator: "-"
         outfilesuffix: .html
         source-highlighter: rouge
+
+nav:
+  - Home: index.adoc
+  - Page 2: page-2.adoc
+  - Markdown Kitchen Sink: markdown-kitchen-sink.md
+  - Modules:
+    - modules/module.adoc
+    - Procedures: modules/procedure.adoc
+

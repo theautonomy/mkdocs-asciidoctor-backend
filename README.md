@@ -55,6 +55,11 @@ gem install asciidoctor rouge
          # or Chocolatey:
          # asciidoctor_cmd: "C:/tools/ruby34/bin/asciidoctor.bat"
    ```
+5. Build and serve
+   ```
+   python -m mkdocs build -f demo/mkdocs.yml -v
+   python -m mkdocs serve --livereload -f demo/mkdocs.yml
+   ```
 
 > [!NOTE]
 > On Windows, you must use the `.bat` extension and provide the full path. The path depends on your Ruby installation location (e.g., `C:/Ruby34-x64/bin/` or `C:/tools/ruby34/bin/`).

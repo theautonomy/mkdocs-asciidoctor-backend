@@ -1,0 +1,20 @@
+INHERIT: mkdocs.yml
+
+plugins:
+  - search
+  - asciidoctor_backend:
+      asciidoctor_cmd: "C:/tools/ruby34/bin/asciidoctor.bat"
+      edit_includes: true
+      fail_on_error: false
+      ignore_missing: true
+      safe_mode: safe
+      attributes:
+        imagesdir: images
+        showtitle: true
+        sectanchors: true
+        sectlinks: true
+        icons: font
+        idprefix: ""
+        idseparator: "-"
+        outfilesuffix: .html
+        source-highlighter: rouge
