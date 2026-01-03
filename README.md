@@ -20,6 +20,52 @@ Asciidoctor attributes can be injected via the `mkdocs.yml`.
 pip install mkdocs-asciidoctor-backend --upgrade --pre
 ```
 
+### Installing Asciidoctor
+
+This plugin requires [Asciidoctor](https://asciidoctor.org/) to be installed and accessible from the command line.
+
+**Linux/macOS:**
+
+```bash
+gem install asciidoctor rouge
+```
+
+**Windows:**
+
+1. Install Ruby using one of these methods:
+   - [RubyInstaller](https://rubyinstaller.org/) (choose "Ruby+Devkit") - installs to `C:\Ruby34-x64\`
+   - [Chocolatey](https://chocolatey.org/): `choco install ruby` - installs to `C:\tools\ruby34\`
+
+2. Install Asciidoctor:
+   ```cmd
+   gem install asciidoctor rouge
+   ```
+
+3. Find where Ruby is installed:
+   ```cmd
+   where ruby
+   ```
+
+4. Configure the full path to `asciidoctor.bat` in your `mkdocs.yml`:
+   ```yaml
+   plugins:
+     - asciidoctor_backend:
+         # RubyInstaller:
+         asciidoctor_cmd: "C:/Ruby34-x64/bin/asciidoctor.bat"
+         # or Chocolatey:
+         # asciidoctor_cmd: "C:/tools/ruby34/bin/asciidoctor.bat"
+   ```
+
+> [!NOTE]
+> On Windows, you must use the `.bat` extension and provide the full path. The path depends on your Ruby installation location (e.g., `C:/Ruby34-x64/bin/` or `C:/tools/ruby34/bin/`).
+
+> [!TIP]
+> **Troubleshooting:** If `asciidoctor.bat` is not in Ruby's bin directory, your gem configuration may have a custom `--bindir` setting. Check with `gem env` and look for the "EXECUTABLE DIRECTORY" or custom gem configuration. You can install to Ruby's bin directory explicitly:
+> ```cmd
+> gem install asciidoctor rouge --bindir C:/Ruby34-x64/bin
+> ```
+> (Replace the path with your actual Ruby bin directory from `where ruby`)
+
 > [!IMPORTANT]
 >
 > - MkDocs expects docs source in a `docs/` folder. See [Strategy for including docs from repository root](https://github.com/mkdocs/mkdocs/discussions/3062) for further discussion.

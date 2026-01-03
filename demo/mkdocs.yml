@@ -46,6 +46,7 @@ exclude_docs: |
 plugins:
   - search
   - asciidoctor_backend:
+      asciidoctor_cmd: "c:/tools/ruby34/bin/asciidoctor.bat"
       edit_includes: true
       fail_on_error: false
       ignore_missing: true
