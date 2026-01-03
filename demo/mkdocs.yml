@@ -140,5 +140,6 @@ nav:
   - Markdown Kitchen Sink: markdown-kitchen-sink.md
   - Modules:
     - modules/module.adoc
+    - Diagrams: modules/diagram.md
     - Procedures: modules/procedure.adoc
 

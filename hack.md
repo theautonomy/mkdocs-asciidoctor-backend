@@ -14,6 +14,7 @@ python -m mkdocs --version
 # Run a build
 python -m mkdocs build -f demo/mkdocs.yml -v && \
 python -m mkdocs serve --livereload -f demo/mkdocs.yml
+w 
 
 # Package
 python -m pip install --upgrade build twine
